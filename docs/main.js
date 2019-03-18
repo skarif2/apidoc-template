@@ -112,7 +112,7 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     'ü': 'ue',
     'ö': 'oe',
     'ß': 'ss'
-  }; // TODO: remove in version 1.0
+  };
   $.each(apiByGroupAndName, function (index, groupEntries) {
     // get titles from the first entry of group[].name[] (name has versioning)
     var titles = [];
@@ -320,7 +320,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
         if (entry.groupTitle)
           title = entry.groupTitle;
 
-        // TODO: make groupDescription compareable with older versions (not important for the moment)
         if (entry.groupDescription)
           description = entry.groupDescription;
 
@@ -584,7 +583,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
       };
 
       // add unique id
-      // TODO: replace all group-name-version in template with id.
       fields.article.id = fields.article.group + '-' + fields.article.name + '-' + fields.article.version;
       fields.article.id = fields.article.id.replace(/\./g, '_');
 
@@ -628,7 +626,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
       $('#sidenav li[data-group=\'' + group + '\'][data-name=\'' + name + '\'][data-version=\'' + currentVersion + '\']').addClass('has-modifications');
 
       $root.remove();
-      // TODO: on change main version or select the highest version re-render
     }
 
     initDynamic();
@@ -660,7 +657,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
    */
   function addArticleSettings(fields, entry) {
     // add unique id
-    // TODO: replace all group-name-version in template with id.
     fields.id = fields.article.group + '-' + fields.article.name + '-' + fields.article.version;
     fields.id = fields.id.replace(/\./g, '_');
 
@@ -775,6 +771,8 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
         return 'DEL';
       case 'PATCH':
         return 'PATC';
+      case 'OPTIONS':
+        return 'OPT';
       case 'GET':
       case 'POST':
       case 'PUT':

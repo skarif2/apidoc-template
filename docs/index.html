@@ -29,8 +29,9 @@
     
     <div class="row">
       <div class="sidenav-search col-md-2">
-        <input class="form-control search" type="text" placeholder="{{__ "Filter..."}}">
-        <span class="search-reset">x</span>
+        <input class="form-control search" type="text" placeholder="{{__ "Search"}}">
+        <span class="search-reset">&#10005;</span>
+        <span class="search-reset">&#10005;</span>
       </div>
     </div>
 
@@ -125,8 +126,8 @@
 
 
 <script id="template-article" type="text/x-handlebars-template">
-  <div class="row row-dark">
-    <div class="col-md-7 section-light no-float">
+  <div class="row pre-{{toLowerCase article.type}}">
+    <div class="col-md-7 no-float">
       <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" {{#if hidden}}class="hide"{{/if}} data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}">
         <div class="pull-left">
           <h2>{{article.groupTitle}}{{#if article.title}} - {{article.title}}{{/if}}</h2>
@@ -152,7 +153,7 @@
           <p>{{{nl2br article.description}}}</p>
         {{/if}}
 
-        <pre class="full-pre" data-type="{{toLowerCase article.type}}"><code><span class="typ typ-{{toLowerCase article.type}}">{{toUpperCase article.type}}</span> <span class="pln">{{article.url}}</span></code></pre>
+        <pre class="full-pre pre-{{toLowerCase article.type}}" data-type="{{toLowerCase article.type}}"><span class="typ typ-{{toLowerCase article.type}}">{{toUpperCase article.type}}</span> <span class="pln">{{article.url}}</span></pre>
 
         {{#if article.permission}}
           <p>
@@ -176,7 +177,7 @@
 
       </article>
     </div>
-    <div class="col-md-5 section-dark no-float">
+    <div class="col-md-4 section-example no-float">
       {{#if_gt article.examples.length compare=0}}
         <ul class="nav nav-tabs nav-tabs-examples">
           {{#each article.examples}}
@@ -227,7 +228,7 @@
 <script id="template-article-param-block" type="text/x-handlebars-template">
   {{#if params}}
     {{#each params.fields}}
-      <h3>{{__ @key}}</h3>
+      <h3 class="headers">{{__ @key}}</h3>
       <table class="table table-hover">
         <thead>
           <tr>
@@ -661,7 +662,7 @@
 <div class="container-fluid">
   <div class="row">
     <div id="sidenav" class="col-sm-2 col-md-2"></div>
-    <div id="content" class="col-sm-10 col-md-10">
+    <div id="content" class="col-sm-9 col-md-10">
       <div id="project"></div>
       <div id="header"></div>
       <div id="sections"></div>

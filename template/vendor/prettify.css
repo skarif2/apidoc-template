@@ -26,7 +26,7 @@ pre .pun {
 }
 /* punctuation - white */
 pre .pln {
-  color: #fff;
+  color: rgb(59, 65, 81);
 }
 /* plaintext - white */
 pre .tag {
@@ -86,7 +86,7 @@ li.L8 {
     color: #440;
   }
   pre .pln {
-    color: #000;
+    color: rgb(59, 65, 81);
   }
   pre .tag {
     color: #006;
