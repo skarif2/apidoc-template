@@ -122,7 +122,6 @@ th {
 td {
   vertical-align: top;
   padding: 2px 2px;
-  /* border: 1px solid #eee; */
 }
 
 .table>thead>tr>th {
@@ -161,38 +160,18 @@ td {
   padding: 30px 0;
 }
 
-/*#apidoc h1 {
-  font-family: "Source Code Pro", monospace, sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  padding-bottom: 14px;
-  margin: 0 0 20px 0;
-  padding: 0;
-}
-
-#apidoc h2 {
-  font-family: "Source Code Pro Bold", monospace, sans-serif;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 26px;
-  padding-top: 14px;
-}*/
-
 /* ------------------------------------------------------------------------------------------
  * pre / code
  * ------------------------------------------------------------------------------------------ */
 pre {
-  font-family: monospace;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
   padding: 10px;
   border-radius: 0px;
   position: relative;
   margin: 10px 0 20px 0;
   border: none;
   background: transparent;
-  color: #fff;
 }
 
 code.language-text {
@@ -214,7 +193,7 @@ pre.language-html:before {
   left: 0;
   font-family: "Source Code Pro", monospace, sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   display: inline-block;
   padding: 2px 5px;
   border-radius: 6px;
@@ -248,7 +227,7 @@ pre.language-api .pun {
 
 pre code {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Source Code Pro";
   font-style: normal;
   font-weight: 400;
@@ -287,7 +266,6 @@ pre code.sample-request-response-json {
   overflow-x: auto;
   overflow-y: scroll;
 }
-
 
 .sidenav > li > a {
   display: block;
@@ -516,9 +494,12 @@ tr.del td {
 ul.nav-tabs {
   margin: 0;
   border: none;
-  border-radius: 5px 5px 0px 0px;
-  background-color: #000;
-  padding-top: 2px;
+  border-radius: 0px 5px 0px 0px;
+  background: #181A22;
+  padding-top: 15px;
+  box-shadow: 
+    inset 0px 6px 4px -5px #000000,
+    inset 0px -6px 4px -5px #000000; 
 }
 
 .nav-tabs>li>a{
@@ -536,13 +517,9 @@ ul.nav-tabs {
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
-  background-color: #41444e;
-  color: rgb(59, 65, 81);
+  background-color: #282A36;
   border: none;
-  border-top: 1px solid #000;
 }
-
-
 
 /* ------------------------------------------------------------------------------------------
  * Print
@@ -602,10 +579,6 @@ ul.nav-tabs {
   border: none;
 }
 
-.label:focus{
-
-}
-
 .label-info {
   background-color: #3395b2;
 }
@@ -626,7 +599,6 @@ ul.nav-tabs {
   color: rgb(59, 65, 81);
 }
 
-
 .sidenav::-webkit-scrollbar-track
 {
 
@@ -644,8 +616,6 @@ ul.nav-tabs {
   background-color: #4c4c4c;
 }
 
-
-
 body::-webkit-scrollbar-track
 {
   background-color: #F5F5F5;
@@ -661,7 +631,6 @@ body::-webkit-scrollbar-thumb
 {
   background-color: #4c4c4c;
 }
-
 
 /* ------------------------------------------------------------------------------------------
  * Side nav search
@@ -723,8 +692,7 @@ body::-webkit-scrollbar-thumb
 .section-example {
   padding: 0;
   height: 100%;
-  /* border-left: 1px solid #41444e; */
-  background: #41444e;
+  background: #282a36;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -749,6 +717,7 @@ body::-webkit-scrollbar-thumb
 
 button.version, button#version {
   padding: 3px 8px;
+  background: transparent;
 }
 
 button.version {
@@ -759,7 +728,6 @@ button#version {
   border-radius: 2px;
   font-size: 16px;
 }
-
 
 .nav-tabs-examples>li>a:hover,
 .nav-tabs-examples>li.active>a,
@@ -867,4 +835,10 @@ pre .typ-options {
   margin-right: -15px;
   padding: 5px 0px 5px 15px;
   background: #FBFDFC;
+}
+
+.url {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(59, 65, 81);
 }

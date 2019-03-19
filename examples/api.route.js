@@ -48,7 +48,7 @@
  * @apiParam (Body) {String} [password] If not provided will be auto generated
  * @apiParam (Body) {String="User", "Admin", "Moderator"} [userGroup="User"] User group the user belongs to
  * 
- * @apiExample {curl} curl
+ * @apiExample {cURL} cURL
  *   curl -X POST /api/account/create \
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  *        -d '{"name":"Jhon Snow", "username":"i_know_nothing"}'
@@ -99,7 +99,7 @@
  * @apiParam (Body) {String} [name] User full name
  * @apiParam (Body) {String="User", "Admin", "Moderator"} [userGroup] User group the user belongs to
  * 
- * @apiExample {curl} curl
+ * @apiExample {cURL} cURL
  *   curl -X PUT /api/account/5c444e1387e95374633c1e0d \
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  *        -d '{"name":"I am Snow"}'
@@ -157,7 +157,7 @@
  *       "Authorization": "Bearer thisisjwttokenshouldbeonger"
  *     }
  * 
- * @apiExample {curl} curl
+ * @apiExample {cURL} cURL
  *   curl -X DELETE /api/account/5c444e1387e95374633c1e0d \
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  * 
@@ -207,7 +207,7 @@
  *       "Authorization": "Bearer thisisjwttokenshouldbeonger"
  *     }
  * 
- * @apiExample {curl} curl
+ * @apiExample {cURL} cURL
  *   curl -X GET /api/account/:id \
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  * 
@@ -236,3 +236,17 @@
  *   message: "No account found"
  * }
  */
+
+const axios = require('axios');
+try {
+   const response = await axios({
+     method: 'GET',
+     url: '/api/account/:id',
+     headers: {
+        'Authorization': 'Bearer thisisjwttokenshouldbeonger'
+     }
+  });
+  console.log('User created: ', response);
+} catch (error) {
+  console.error(error);
+}
