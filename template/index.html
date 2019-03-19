@@ -1,5 +1,6 @@
 <!doctype html>
-<html><head>
+<html>
+<head>
   <title>Loading...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -240,7 +241,7 @@
         <tbody>
       {{#each this}}
           <tr>
-            <td class="code">{{{splitFill field "." "&nbsp;&nbsp;"}}}{{#unless optional}} <sup class="label-optional">{{__ "*required"}}</sup>{{/unless}}</td>
+            <td class="code">{{{splitFill field "." "&nbsp;&nbsp;"}}}{{#if optional}} <span class="label-optional">{{__ "(optional)"}}</span>{{/if}}</td>
             {{#if ../../_hasType}}
               <td>
                 {{{type}}}

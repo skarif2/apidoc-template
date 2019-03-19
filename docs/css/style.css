@@ -151,9 +151,15 @@ td {
 .label-optional {
   font-size: 13px;
   font-weight: 400;
-  color: #f93e3e;
+  color: #44475a;
   /* float: right; */
 }
+
+/* .label-required {
+  font-size: 13px;
+  font-weight: 400;
+  color: #f93e3e;
+} */
 
 .open-left {
   right: 0;
