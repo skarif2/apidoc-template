@@ -12,10 +12,10 @@ body, p, a, div, th, td {
 }
 
 td.code {
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Source Code Pro", monospace;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 #content {
@@ -132,6 +132,12 @@ td {
   border-top: 0px;
 }
 
+.table>tbody>tr>td>p>code {
+  font-family: "Source Code Pro", monospace;
+  background: transparent;
+  color: #e65100;
+}
+
 .table-hover>tbody>tr:hover {
   background-color: transparent;
 }
@@ -143,7 +149,10 @@ td {
 }
 
 .label-optional {
-  float: right;
+  font-size: 13px;
+  font-weight: 400;
+  color: #f93e3e;
+  /* float: right; */
 }
 
 .open-left {

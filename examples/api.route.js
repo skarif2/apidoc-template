@@ -30,9 +30,9 @@
 
 /**
  *
- * @api {POST} /api/account/create Create an account
- * @apiName Create an account
- * @apiDescription An admin can create an account
+ * @api {POST} /api/account/create Create User
+ * @apiName Create User
+ * @apiDescription An admin can create an new user account
  * @apiGroup Account
  * @apiVersion 1.0.0
  * @apiPermission POST-createAccount
@@ -43,8 +43,8 @@
  *       "Authorization": "Bearer thisisjwttokenshouldbeonger"
  *     }
  *
- * @apiParam (Body) {String} name User full name
- * @apiParam (Body) {String{6..20}} username Username for login
+ * @apiParam (Body) {String} name User's full name
+ * @apiParam (Body) {String{6..20}} username User's username for login
  * @apiParam (Body) {String} [password] If not provided will be auto generated
  * @apiParam (Body) {String="User", "Admin", "Moderator"} [userGroup="User"] User group the user belongs to
  * 
@@ -53,7 +53,7 @@
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  *        -d '{"name":"Jhon Snow", "username":"i_know_nothing"}'
  * 
- * @apiExample {node.js} node.js
+ * @apiExample {Node} Node
  *   const axios = require('axios');
  *   try {
  *      const response = await axios({
@@ -83,9 +83,9 @@
 
 /**
  *
- * @api {PUT} /api/account/:id Update an account
- * @apiName Update an account
- * @apiDescription An admin can update account
+ * @api {PUT} /api/account/:id Update User
+ * @apiName Update User
+ * @apiDescription An admin can update user account
  * @apiGroup Account
  * @apiVersion 1.0.0
  * @apiPermission PUT-updateAccount
@@ -96,7 +96,7 @@
  *       "Authorization": "Bearer thisisjwttokenshouldbeonger"
  *     }
  *
- * @apiParam (Body) {String} [name] User full name
+ * @apiParam (Body) {String} [name] User's full name
  * @apiParam (Body) {String="User", "Admin", "Moderator"} [userGroup] User group the user belongs to
  * 
  * @apiExample {cURL} cURL
@@ -104,7 +104,7 @@
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  *        -d '{"name":"I am Snow"}'
  * 
- * @apiExample {node.js} node.js
+ * @apiExample {Node} Node
  *   const axios = require('axios');
  *   try {
  *      const response = await axios({
@@ -144,9 +144,9 @@
 
 /**
  *
- * @api {DELETE} /api/account/:id DELETE an account
- * @apiName DELETE an account
- * @apiDescription An admin can delete account
+ * @api {DELETE} /api/account/:id Delete User
+ * @apiName Delete User
+ * @apiDescription An admin can delete user account
  * @apiGroup Account
  * @apiVersion 1.0.0
  * @apiPermission DELETE-deleteAccount
@@ -161,7 +161,7 @@
  *   curl -X DELETE /api/account/5c444e1387e95374633c1e0d \
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  * 
- * @apiExample {node.js} node.js
+ * @apiExample {Node} Node
  *   const axios = require('axios');
  *   try {
  *      const response = await axios({
@@ -194,9 +194,9 @@
 
 /**
  *
- * @api {GET} /api/account/:id Get an account
- * @apiName Get an account
- * @apiDescription An admin can get an account
+ * @api {GET} /api/account/:id Get User
+ * @apiName Get User
+ * @apiDescription An admin can get an user account
  * @apiGroup Account
  * @apiVersion 1.0.0
  * @apiPermission GET-getAccount
@@ -211,7 +211,7 @@
  *   curl -X GET /api/account/:id \
  *        -H "Authorization: Bearer thisisjwttokenshouldbeonger" \
  * 
- * @apiExample {node.js} node.js
+ * @apiExample {Node} Node
  *   const axios = require('axios');
  *   try {
  *      const response = await axios({
@@ -236,17 +236,3 @@
  *   message: "No account found"
  * }
  */
-
-const axios = require('axios');
-try {
-   const response = await axios({
-     method: 'GET',
-     url: '/api/account/:id',
-     headers: {
-        'Authorization': 'Bearer thisisjwttokenshouldbeonger'
-     }
-  });
-  console.log('User created: ', response);
-} catch (error) {
-  console.error(error);
-}

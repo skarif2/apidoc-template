@@ -2,9 +2,9 @@
   {
     "type": "POST",
     "url": "/api/account/create",
-    "title": "Create an account",
-    "name": "Create_an_account",
-    "description": "<p>An admin can create an account</p>",
+    "title": "Create User",
+    "name": "Create_User",
+    "description": "<p>An admin can create an new user account</p>",
     "group": "Account",
     "version": "1.0.0",
     "permission": [
@@ -40,7 +40,7 @@
             "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>User full name</p>"
+            "description": "<p>User's full name</p>"
           },
           {
             "group": "Body",
@@ -48,7 +48,7 @@
             "size": "6..20",
             "optional": false,
             "field": "username",
-            "description": "<p>Username for login</p>"
+            "description": "<p>User's username for login</p>"
           },
           {
             "group": "Body",
@@ -80,9 +80,9 @@
         "type": "cURL"
       },
       {
-        "title": "node.js",
+        "title": "Node",
         "content": "const axios = require('axios');\ntry {\n   const response = await axios({\n     method: 'POST',\n     url: '/api/account/create',\n     headers: {\n        'Authorization': 'Bearer thisisjwttokenshouldbeonger'\n     },\n     data: {\n       'name': 'Jhon Snow',\n       'username': 'i_know_nothing'\n     }\n  });\n  console.log('User created: ', response);\n} catch (error) {\n  console.error(error);\n}",
-        "type": "node.js"
+        "type": "Node"
       }
     ],
     "error": {
@@ -152,9 +152,9 @@
   {
     "type": "DELETE",
     "url": "/api/account/:id",
-    "title": "DELETE an account",
-    "name": "DELETE_an_account",
-    "description": "<p>An admin can delete account</p>",
+    "title": "Delete User",
+    "name": "Delete_User",
+    "description": "<p>An admin can delete user account</p>",
     "group": "Account",
     "version": "1.0.0",
     "permission": [
@@ -189,9 +189,9 @@
         "type": "cURL"
       },
       {
-        "title": "node.js",
+        "title": "Node",
         "content": "const axios = require('axios');\ntry {\n   const response = await axios({\n     method: 'DELETE',\n     url: '/api/account/5c444e1387e95374633c1e0d',\n     headers: {\n        'Authorization': 'Bearer thisisjwttokenshouldbeonger'\n     }\n  });\n  console.log('User created: ', response);\n} catch (error) {\n  console.error(error);\n}",
-        "type": "node.js"
+        "type": "Node"
       }
     ],
     "success": {
@@ -229,9 +229,9 @@
   {
     "type": "GET",
     "url": "/api/account/:id",
-    "title": "Get an account",
-    "name": "Get_an_account",
-    "description": "<p>An admin can get an account</p>",
+    "title": "Get User",
+    "name": "Get_User",
+    "description": "<p>An admin can get an user account</p>",
     "group": "Account",
     "version": "1.0.0",
     "permission": [
@@ -266,9 +266,9 @@
         "type": "cURL"
       },
       {
-        "title": "node.js",
+        "title": "Node",
         "content": "const axios = require('axios');\ntry {\n   const response = await axios({\n     method: 'GET',\n     url: '/api/account/:id',\n     headers: {\n        'Authorization': 'Bearer thisisjwttokenshouldbeonger'\n     }\n  });\n  console.log('User created: ', response);\n} catch (error) {\n  console.error(error);\n}",
-        "type": "node.js"
+        "type": "Node"
       }
     ],
     "error": {
@@ -338,9 +338,9 @@
   {
     "type": "PUT",
     "url": "/api/account/:id",
-    "title": "Update an account",
-    "name": "Update_an_account",
-    "description": "<p>An admin can update account</p>",
+    "title": "Update User",
+    "name": "Update_User",
+    "description": "<p>An admin can update user account</p>",
     "group": "Account",
     "version": "1.0.0",
     "permission": [
@@ -376,7 +376,7 @@
             "type": "String",
             "optional": true,
             "field": "name",
-            "description": "<p>User full name</p>"
+            "description": "<p>User's full name</p>"
           },
           {
             "group": "Body",
@@ -400,9 +400,9 @@
         "type": "cURL"
       },
       {
-        "title": "node.js",
+        "title": "Node",
         "content": "const axios = require('axios');\ntry {\n   const response = await axios({\n     method: 'PUT',\n     url: '/api/account/5c444e1387e95374633c1e0d',\n     headers: {\n        'Authorization': 'Bearer thisisjwttokenshouldbeonger'\n     },\n     data: {\n       'name': 'I am Snow'\n     }\n  });\n  console.log('User created: ', response);\n} catch (error) {\n  console.error(error);\n}",
-        "type": "node.js"
+        "type": "Node"
       }
     ],
     "success": {
