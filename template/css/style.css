@@ -152,7 +152,6 @@ td {
   font-size: 13px;
   font-weight: 400;
   color: #44475a;
-  /* float: right; */
 }
 
 /* .label-required {
@@ -776,10 +775,10 @@ button#version {
   color: #f93e3e;
 }
 .nav-list-item .typ-name.typ-head {
-  color: #61affe;
+  color: #9012fe;
 }
 .nav-list-item .typ-name.typ-options {
-  color: #50e3c2;
+  color: #0d5aa7;
 }
 
 pre .typ-get {
@@ -798,10 +797,10 @@ pre .typ-delete {
   background: #f93e3e;
 }
 pre .typ-head {
-  background: #61affe;
+  background: #9012fe;
 }
 pre .typ-options {
-  background: #50e3c2;
+  background: #0d5aa7;
 }
 
 .pre-get {
@@ -825,12 +824,12 @@ pre .typ-options {
   border: 1px solid #f93e3e;
 }
 .pre-head {
-  background: rgba(97,175,254,.1);
-  border: 1px solid #61affe;
+  background: rgba(144,18,254,.1);
+  border: 1px solid #9012fe;
 }
 .pre-options {
-  background: rgba(80,227,194,.1);
-  border: 1px solid #50e3c2;
+  background: rgba(13,90,167,.1);
+  border: 1px solid #0d5aa7;
 }
 
 .row {

@@ -236,3 +236,69 @@
  *   message: "No account found"
  * }
  */
+
+
+
+/**
+ *
+ * @api {PATCH} /api/account/:id Patch Update an account
+ * @apiName Patch Update an account
+ * @apiDescription An admin can update account
+ * @apiGroup Account
+ * @apiVersion 1.0.0
+ * @apiPermission PUT-updateFullAccount
+ */
+
+/**
+ *
+ * @api {HEAD} /api/account/:id Account head info
+ * @apiName Account head info
+ * @apiDescription An admin can update account
+ * @apiGroup Account
+ * @apiVersion 1.0.0
+ */
+
+
+/**
+ *
+ * @api {OPTIONS} /api/account/:id Just a options demo
+ * @apiName Just a options demo
+ * @apiDescription An admin can update account
+ * @apiGroup Account
+ * @apiVersion 1.0.0
+ */
+
+
+
+/**
+ *
+ * @api {POST} /api/user Register user
+ * @apiName Register user
+ * @apiDescription User registration
+ * @apiGroup User
+ * @apiVersion 1.0.0
+ *
+ * @apiParam (Body) {String} [firstname]  Optional Firstname of the User.
+ * @apiParam (Body) {String} lastname Mandatory Lastname.
+ * @apiParam (Body) {String} username Mandatory username.
+ * @apiParam (Body) {String} password Mandatory password.
+ * @apiParam (Body) {String} email Mandatory email.
+ * @apiParam (Body) {String} country="BD" Mandatory with default value "BD".
+ * @apiParam {Number} [age=18] Optional Age with default 18.
+ * 
+ * @apiSuccess (200) {String} firstname Firstname of the User.
+ * @apiSuccess (200) {String} lastname Lastname.
+ * @apiSuccess (200) {String} username username.
+ * @apiSuccess (200) {Object} email info.
+ * @apiSuccess (200) {String} email.address email address.
+ * @apiSuccess (200) {Object} email.verified if email is verified.
+ * @apiSuccess (200) {String} email.verified.expire if email is verified.
+ * @apiSuccess (200) {String} email.verified.value if email is verified.
+ * @apiSuccess (200) {String} country country
+ * @apiSuccess (200) {Number} age age
+ *
+ * @apiError {Object} error Error response
+ *
+ */
+
+

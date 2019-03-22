@@ -14,10 +14,11 @@
   <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/tippy.js@4"></script>
 </head>
+
 <body>
 
-<script id="template-sidenav" type="text/x-handlebars-template">
-  <nav id="scrollingNav">
+  <script id="template-sidenav" type="text/x-handlebars-template">
+    <nav id="scrollingNav">
 
     <ul class="sidenav nav nav-list list col-md-2">
 
@@ -31,6 +32,7 @@
     <div class="row">
       <div class="sidenav-search col-md-2">
         <input class="form-control search" type="text" placeholder="{{__ "Search"}}">
+        <span class="search-reset">&#10005;</span>
         <span class="search-reset">&#10005;</span>
       </div>
     </div>
@@ -61,8 +63,8 @@
   </nav>
 </script>
 
-<script id="template-project" type="text/x-handlebars-template">
-  <div class="pull-left">
+  <script id="template-project" type="text/x-handlebars-template">
+    <div class="pull-left">
     <h1>{{name}}</h1>
     {{#if description}}<h4>{{{nl2br description}}}</h4>{{/if}}
   </div>
@@ -86,20 +88,20 @@
   <div class="clearfix"></div>
 </script>
 
-<script id="template-header" type="text/x-handlebars-template">
-  {{#if content}}
+  <script id="template-header" type="text/x-handlebars-template">
+    {{#if content}}
     <div id="api-_">{{{content}}}</div>
   {{/if}}
 </script>
 
-<script id="template-footer" type="text/x-handlebars-template">
-  {{#if content}}
+  <script id="template-footer" type="text/x-handlebars-template">
+    {{#if content}}
     <div id="api-_footer">{{{content}}}</div>
   {{/if}}
 </script>
 
-<script id="template-generator" type="text/x-handlebars-template">
-  {{#if template.withGenerator}}
+  <script id="template-generator" type="text/x-handlebars-template">
+    {{#if template.withGenerator}}
     {{#if generator}}
       <div class="content">
         {{__ "Generated with"}} <a href="{{{generator.url}}}">{{{generator.name}}}</a> {{{generator.version}}} - {{{generator.time}}}
@@ -108,8 +110,8 @@
   {{/if}}
 </script>
 
-<script id="template-sections" type="text/x-handlebars-template">
-  <section id="api-{{group}}">
+  <script id="template-sections" type="text/x-handlebars-template">
+    <section id="api-{{group}}">
     <h1>{{underscoreToSpace title}}</h1>
     {{#if description}}
       <p>{{{nl2br description}}}</p>
@@ -125,8 +127,8 @@
 </script>
 
 
-<script id="template-article" type="text/x-handlebars-template">
-  <div class="row pre-{{toLowerCase article.type}}">
+  <script id="template-article" type="text/x-handlebars-template">
+    <div class="row pre-{{toLowerCase article.type}}">
     <div class="col-md-7 no-float">
       <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" {{#if hidden}}class="hide"{{/if}} data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}">
         <div class="pull-left">
@@ -203,8 +205,8 @@
   </div>
 </script>
 
-<script id="template-article-param-block-dark" type="text/x-handlebars-template">
-  {{#if params}}
+  <script id="template-article-param-block-dark" type="text/x-handlebars-template">
+    {{#if params}}
     {{#if_gt params.examples.length compare=0}}
       <ul class="nav nav-tabs nav-tabs-examples">
         {{#each params.examples}}
@@ -225,8 +227,8 @@
   {{/if}}
 </script>
 
-<script id="template-article-param-block" type="text/x-handlebars-template">
-  {{#if params}}
+  <script id="template-article-param-block" type="text/x-handlebars-template">
+    {{#if params}}
     {{#each params.fields}}
       <h3 class="headers">{{__ @key}}</h3>
       <table class="table table-hover">
@@ -265,7 +267,7 @@
   {{/if}}
 </script>
 
-<script id="template-article-sample-request" type="text/x-handlebars-template">
+  <script id="template-article-sample-request" type="text/x-handlebars-template">
     {{#if article.sampleRequest}}
       <h2 class="hide-print">{{__ "Send a Sample Request"}}</h2>
       <form class="hide-print">
@@ -334,8 +336,8 @@
     {{/if}}
 </script>
 
-<script id="template-compare-article" type="text/x-handlebars-template">
-  <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" {{#if hidden}}class="hide"{{/if}} data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}" data-compare-version="{{compare.version}}">
+  <script id="template-compare-article" type="text/x-handlebars-template">
+    <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" {{#if hidden}}class="hide"{{/if}} data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}" data-compare-version="{{compare.version}}">
     <div class="pull-left">
       <h1>{{underscoreToSpace article.group}} - {{{showDiff article.title compare.title}}}</h1>
     </div>
@@ -428,8 +430,8 @@
   </article>
 </script>
 
-<script id="template-article-compare-permission" type="text/x-handlebars-template">
-  {{#each_compare_list_field article.permission compare.permission field="name"}}
+  <script id="template-article-compare-permission" type="text/x-handlebars-template">
+    {{#each_compare_list_field article.permission compare.permission field="name"}}
     {{#if source}}
       {{#if typeSame}}
         {{source.name}}
@@ -482,8 +484,8 @@
   {{/each_compare_list_field}}
 </script>
 
-<script id="template-article-compare-param-block" type="text/x-handlebars-template">
-  {{#if source}}
+  <script id="template-article-compare-param-block" type="text/x-handlebars-template">
+    {{#if source}}
     {{#each_compare_keys source.fields compare.fields}}
       {{#if typeSame}}
         <h2>{{__ source.key}}</h2>
@@ -579,8 +581,8 @@
   {{/if}}
 </script>
 
-<script id="template-article-compare-param-block-body" type="text/x-handlebars-template">
-  <tbody>
+  <script id="template-article-compare-param-block-body" type="text/x-handlebars-template">
+    <tbody>
     {{#each_compare_field source compare}}
       {{#if typeSame}}
         <tr>
@@ -659,57 +661,68 @@
   </tbody>
 </script>
 
-<div class="container-fluid">
-  <div class="row">
-    <div id="sidenav" class="col-sm-2 col-md-2"></div>
-    <div id="content" class="col-sm-9 col-md-10">
-      <div id="project"></div>
-      <div id="header"></div>
-      <div id="sections"></div>
-      <div id="footer"></div>
-      <div id="generator"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidenav" class="col-sm-2 col-md-2"></div>
+      <div id="content" class="col-sm-9 col-md-10">
+        <div id="project"></div>
+        <div id="header"></div>
+        <div id="sections"></div>
+        <div id="footer"></div>
+        <div id="generator"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="loader">
-  <div class="spinner">
-    <div class="spinner-container container1">
-      <div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div>
+  <div id="loader">
+    <div class="spinner">
+      <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <p>Loading...</p>
     </div>
-    <div class="spinner-container container2">
-      <div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div>
-    </div>
-    <div class="spinner-container container3">
-      <div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div>
-    </div>
-    <p>Loading...</p>
   </div>
-</div>
 
-<script data-main="main.js" src="vendor/require.min.js"></script>
-<script>
-  var clipboard = new ClipboardJS('.label-permission');
-  setTimeout(function() {
-    var instances = tippy('.label-permission', {
-      content: 'Copied to clipboard!',
-      trigger: 'manual',
-      duration: [100, 250],
-      distance: 5,
-      placement: 'bottom'
-    });
-    clipboard.on('success', function(e) {
-      if (e.action === 'copy') {
-        var indx = instances.findIndex(function(element) {
-          return element.reference.innerText === e.text;
-        });
-        if (indx !== -1) {
-          instances[indx].show();
+  <script data-main="main.js" src="vendor/require.min.js"></script>
+  <script>
+    var clipboard = new ClipboardJS('.label-permission');
+    setTimeout(function () {
+      var instances = tippy('.label-permission', {
+        content: 'Copied to clipboard!',
+        trigger: 'manual',
+        duration: [100, 250],
+        distance: 5,
+        placement: 'bottom'
+      });
+      clipboard.on('success', function (e) {
+        if (e.action === 'copy') {
+          var indx = instances.findIndex(function (element) {
+            return element.reference.innerText === e.text;
+          });
+          if (indx !== -1) {
+            instances[indx].show();
+          }
         }
-      }
-      e.clearSelection();
-    });
-  }, 3000);
-</script>
+        e.clearSelection();
+      });
+    }, 3000);
+  </script>
 
-</body></html>
+</body>
+
+</html>
